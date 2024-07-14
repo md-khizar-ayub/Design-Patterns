@@ -10,7 +10,11 @@ public class Singleton {
 	}
 
 	public static Singleton getInstance(String value) {
-		return new Singleton(value);
+		
+		if(instance==null) {
+			return new Singleton(value);
+		}
+		return instance;
 	}
 	public String getValue() {
 		return this.value;
